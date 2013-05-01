@@ -13,6 +13,8 @@ What Will Be Covered
     - Ruby, Rails, CVEs, rubygems
     - Upgrade difficulties
     - Compared to other stuff (Java)
+    - Community
+        - rubygems-trust as a case study
 - Security as quality
     - Testing
     - Security breaches are inevitable
