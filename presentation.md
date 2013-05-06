@@ -34,7 +34,8 @@ Provide a list of CVEs and a time frame.
 
 Security Vulnerability Impacts
 ==============================
-Personal Rails Example
+Personal Rails Example (Scumbag Rails logo)
+Tight Coupling (Plethora of stuff pulled in via Rails including ORM, mailer, web request stack)
 Github Email Example
 
 Why are we seeing this?
@@ -131,6 +132,10 @@ Community efforts that can help.
  - Open communication
  - Careful communication of issues you discover
 Go back to rubygems-trust example.
+
+Credits
+=======
+XKCD, Rails, etc.
 
 Any Questions?
 ==============
