@@ -7,30 +7,75 @@ author: Matt Glover
 The State of Security in Ruby
 =============================
 
+Who Does This Guy Think He Is!?
+===============================
+He Is:
+
+* Matt Glover
+* Software engineer at [Mandiant](http://www.mandiant.com/)
+* Interested in software security and secure coding concepts
+
+He Is **NOT**:
+
+* A security expert
+* More qualified to speak about security than anyone else in the room
+    * Even though he works at a security-focused company
+    * He just has to worry about security a little more often
+
+He Also Is:
+
+* Looking to hire X (TBD after meeting tomorrow)
+
 What Will Be Covered
 ====================
-TODO: Convert this into a proper TOC
-TODO: Make sections into a one-liner or two followed by detail slides
+* Recent Security Issues in the Ruby Ecosystem
+* Is Ruby Security A Mess?
+* What Can Be Done? - Practices, Tools, and Tips
 
-Security in Ruby
-================
-Over the past (6-12?) months we have seen a variety of security issues reported against Ruby the language, major gems like Rails, and supporting infrastructure like rubygems.org.
+Security Issues in Ruby
+=======================
+A rocky 12 months on the security front (primarily since the start of 2013)
 
-Ruby Examples
+* [55 CVEs mentioning Ruby](https://web.nvd.nist.gov/view/vuln/search-results?adv_search=true&cves=on&cve_id=&query=Ruby&cwe_id=&pub_date_start_month=4&pub_date_start_year=2012&pub_date_end_month=-1&pub_date_end_year=-1&mod_date_start_month=-1&mod_date_start_year=-1&mod_date_end_month=-1&mod_date_end_year=-1&cvss_sev_base=&cvss_av=&cvss_ac=&cvss_au=&cvss_c=&cvss_i=&cvss_a=):
+    * MRI, JRuby, Rubinius, etc.
+    * Rails, Devise, JSON, etc.
+    * Various other gems large and small
+* Rubygems compromise in January
+
+Ruby Example
+============
+[Hash-flooding DoS vulnerability for ruby 1.9](http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/).
+
+TL;DR - Replaces hashing algorithm to avoid predictable collisions leading to worst-case insert times.
+
+Rails Example
 =============
-DoS attack? (Ruby 1.9.2 -> 1.9.3)
+[3.2.11 Abitrary Code Execution via XML](http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/)
 
-Rails Examples
-==============
-YAML parsing
+TL;DR - Entity types, like YAML, were parsed in XML parameter hash construction. Now vulnerable types are not allowed.
 
 Rubygems Website Example
 ========================
-Gem Signing
+[Rubygems compromise in January](http://blog.rubygems.org/2013/01/31/data-verification.html)
+
+TL;DR - Executed `Yaml.load` on gem metadata enabling code execution. Now whitelists classes demarshalled from gems.
 
 CVEs in Other Gems
 ==================
-Provide a list of CVEs and a time frame.
+A *non*-exhaustive list of other Ruby gem CVEs over the past year:
+
+* [rack-cache (CVE-2012-2671)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2671)
+* [mail (CVE-2012-2140)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2140)
+* [authlogic (CVE-2012-6497)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-6497)
+* [json (CVE-2013-0269)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0269)
+* [curl (CVE-2013-2617)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2617)
+* [nori (CVE-2013-0285)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0285)
+* [crack (CVE-2013-1800)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1800)
+* [httparty (CVE-2013-1801)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1801)
+* [extlib (CVE-2013-1802)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1802)
+* [multi_xml (CVE-2013-0175)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0175)
+* [devise (CVE-2013-0233)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0233)
+* [md2pdf (CVE-2013-1948)](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1948)
 
 Security Vulnerability Impacts
 ==============================
