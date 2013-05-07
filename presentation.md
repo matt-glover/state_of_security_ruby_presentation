@@ -24,7 +24,10 @@ He Is **NOT**:
 
 He Also Is:
 
-* Looking to hire X (TBD after meeting tomorrow)
+* Looking to hire:
+    * Test automation engineers and QA
+    * Developers with a strong background in Ruby and/or JavaScript
+    * Strong UI developers (HTML/CSS)
 
 What Will Be Covered
 ====================
