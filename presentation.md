@@ -7,6 +7,14 @@ author: Matt Glover
 The State of Security in Ruby
 =============================
 
+<% left do %>
+  <img src="images/broken_lock.png" title="Broken lock" alt="Broken lock" style="display: block;margin-left: auto;margin-right: auto;width: 70%;" />
+<% end %>
+
+<% right do %>
+  <img src="images/ruby_logo.png" title="Ruby logo" alt="Ruby logo" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" />
+<% end %>
+
 Who Does This Guy Think He Is!?
 ===============================
 He Is:
@@ -197,6 +205,9 @@ Go back to rubygems-trust example.
 Credits
 =======
 XKCD, Rails, etc.
+
+https://commons.wikimedia.org/wiki/File:Image-Wikimania--5_agosto--Broken_lock.png
+https://commons.wikimedia.org/wiki/File:Ruby_logo.png
 
 Any Questions?
 ==============
