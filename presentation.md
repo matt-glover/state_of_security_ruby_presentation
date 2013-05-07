@@ -28,9 +28,12 @@ He Also Is:
 
 What Will Be Covered
 ====================
-* Recent Security Issues in the Ruby Ecosystem
-* Is Ruby Security A Mess?
-* What Can Be Done? - Practices, Tools, and Tips
+
+1. Recent Security Issues in the Ruby Ecosystem
+
+2. Is Ruby Security A Mess?
+
+3. What Can Be Done? - Practices, Tools, and Tips
 
 Security Issues in Ruby
 =======================
@@ -153,6 +156,7 @@ Detection - External
 
 Defense
 =======
+<% left do %>
 Tools:
  - brakeman
  - metrics
@@ -163,6 +167,10 @@ Callback to Flip:
  - Roll your own code
    - Possible security trade-off here.
    - Know your likely attack cases.
+<% end %>
+<% right do %>
+<img src="images/clippy_secure.jpg" style="display: block;margin-left: auto;margin-right: auto;height: 45%;" title="It looks like you're trying to secure your software" alt="It looks like you're trying to secure your software" />
+<% end %>
 
 Mitigation
 ==========
