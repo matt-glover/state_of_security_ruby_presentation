@@ -158,19 +158,24 @@ Defense
 =======
 <% left do %>
 Tools:
- - brakeman
- - metrics
- - esapi
+
+* brakeman
+* metrics
+* esapi
+
 Practices:
- - Helpful Practices (OWASP): Inline several of these
-Callback to Flip:
- - Roll your own code
-   - Possible security trade-off here.
-   - Know your likely attack cases.
+
+* Helpful Practices (OWASP): Inline several of these
+* Roll your own code (Flip Sasser*)
+    * Possible security trade-off here
+    * Know your likely attack cases
 <% end %>
 <% right do %>
 <img src="images/clippy_secure.jpg" style="display: block;margin-left: auto;margin-right: auto;height: 45%;" title="It looks like you're trying to secure your software" alt="It looks like you're trying to secure your software" />
 <% end %>
+
+*TODO: Add footnote about the fact that whatever quote I use is not an actual quote.*
+*TODO: Go back and add images to the vulnerability slides*
 
 Mitigation
 ==========
