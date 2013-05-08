@@ -183,13 +183,26 @@ What Is The Lesson Here?
 
 Accepting Reality
 =================
-Security breaches are inevitable (add exact Mandia quote)
 
-Compare to the idea of bug-free code.
+---
+---*Security Breaches Are Inevitable*---
+  
+<% step do %>
+Disagree? Consider the following:
+
+> "Software bugs are inevitable."
+<% end %>
+<% step do %>
+In my view:
 
     :software_security == :software_quality
 
-(Strictly speaking it is probably `:software_security >= :software_quality`)
+*Arguably software security includes non-software elements that fall outside software quality*
+<% end %>
+
+<% step do %>
+So how do we deal with this reality?
+<% end %>
 
 Easy! Just Write Good Code!
 ===========================
@@ -205,44 +218,71 @@ Calibrating Risk
 
 Risk Management
 ===============
-Detection, Defense, and Mitigation
-Scaling security: Give examples of personal blog versus twitter. Personal blog versus small site that handles financials or health records versus amazon
+Scale your security.
+<% step do %>
+* Compare a personal blog to Twitter
+<% end %>
+<% step do %>
+* Compare a personal blog to a small site handling financial data
+<% end %>
+<% step do %>
+* Compare a small financial site to a global financial organization
+<% end %>
 
 Defense in Depth
 ================
 <img src="images/7proxies.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;" title="Good luck I'm behind 7 proxies" alt="Good luck I'm behind 7 proxies" />
 
-Detection - Internal
-====================
+Detection - Internal Issues
+===========================
+<% left do %>
 Detecting a compromise:
- - Logging/auditing
- - Monitoring and notifications
- - External reporters of compromise
 
+* Logging/auditing
+* Monitoring and notifications
+* Make it easy to report vulnerabilities and compromises securely
+<% end %>
+<% right do %>
 Detecting vulnerabilities:
- - Smart Testing (including fuzzing)
-   - Testing for security
- - Third parties?
 
-Detection - External
-====================
- - 3rd party code (gems)
- - Tracking 3rd party libs (infrastructure postgres, apache, etc.)
- - Problems with your hosting provider (Linode compromise)
+* Smart testing
+    * Writing tests for security (edge cases, authorization checks, etc.)
+    * Utilize security-focused testing tools like SAST and DAST
+* Hiring third parties
+<% end %>
+
+Detection - External Issues
+===========================
+
+Areas to Consider:
+
+* 3rd party code (gems)
+* Tracking 3rd party libs (infrastructure postgres, apache, etc.)
+* Problems with your hosting provider (Linode compromise)
+
+<% step do %>
+Some Tracking Mechanisms:
+
+* Find a place that announces security issues and follow it
+* If that fails find a place that announces releases in general and follow it
+    * RSS/Atom feeds
+    * Mailing lists
+* Follow established members of the tech community (blogs, Twitter, etc.)
+* Track CVEs from NIST
+<% end %>
 
 Defense
 =======
 <% left do %>
-Tools:
-
-* brakeman
-* metrics
-* esapi
-
 Practices:
 
-* Helpful Practices (OWASP): Inline several of these
-* Roll your own code (Flip Sasser*)
+* [OWASP Top 10 Security Risks](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
+* [Read the OWASP Development Guide](https://owasp.org/index.php/Category:OWASP_Guide_Project)
+* Security controls as design elements and requirements
+* Ask security questions during code reviews
+* Integrate security cases into your test suite
+* Consider rolling your own code in place of third party libraries
+    * [*I'm with you Flip!*](http://www.meetup.com/dcruby/events/68564112/)
     * Possible security trade-off here
     * Know your likely attack cases
 <% end %>
@@ -250,36 +290,81 @@ Practices:
 <img src="images/clippy_secure.jpg" style="display: block;margin-left: auto;margin-right: auto;height: 45%;" title="It looks like you're trying to secure your software" alt="It looks like you're trying to secure your software" />
 <% end %>
 
-*TODO: Add footnote about the fact that whatever quote I use is not an actual quote.*
-*TODO: Go back and add images to the vulnerability slides*
+Defense - Continued
+===================
+Concepts:
+
+* (C)onfidentiality
+* (I)ntegrity
+* (A)vailability
+
+Tools:
+
+* [brakeman](http://brakemanscanner.org/) is a SAST for Rails
+* Code quality suites, like [metric_fu](https://github.com/metricfu/metric_fu), call out weak spots in your code
+* [OWASP ESAPI gem](http://thesp0nge.github.io/owasp-esapi-ruby/) brings a FOSS web application security control library to Ruby
+* One of many dynamic application security tools
+    * [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+    * [OWASP WebScarab](https://owasp.org/index.php/Category:OWASP_WebScarab_Project)
+    * [Burp Suite](https://en.wikipedia.org/wiki/Burp_suite) - Costs $$$
+* Intentionally cause failures in a cloud setting with [Chaos Monkey by Netflix](https://github.com/Netflix/SimianArmy)
+
 
 Mitigation
 ==========
-Recovery Strategy (backups, logging/auditing/scanning)
- - Ancillary benefits
+To reiterate: *Security breaches are inevitable*
 
-- Helpful Practices (OWASP)
+<% step do %>
+Treat a security response like a disaster recovery response:
+
+* Keep backups
+    * **Test your restore process**
+* Encrypt sensitive data
+* Load balancing
+* Ship audits/logs to another machine
+    * Logs tell you who, what, when, where, and how
+* Notify appropriate stakeholders
+    * Sometimes compromise of data carries an obligation to notify
+<% end %>
+
+<% step do %>
+Ancillary benefits:
+
+* During a breach don't panic. You have a plan!
+* Multi-purpose: Downed servers, corrupted data stores, etc.
+<% end %>
 
 What We Can Do
 ==============
-Community efforts that can help.
- - Open communication
- - Careful communication of issues you discover
-Go back to rubygems-trust example.
+Community efforts that can help:
+
+* Open communication
+* Thoughtful disclosure of issues you discover
+* Make step-wise progress
+    * rubygems-trust attempted a large scale solution to gem signing
 
 Credits
 =======
-XKCD, Rails, etc.
 
-https://commons.wikimedia.org/wiki/File:Image-Wikimania--5_agosto--Broken_lock.png
-https://commons.wikimedia.org/wiki/File:Ruby_logo.png
-https://commons.wikimedia.org/wiki/File%3AX.png
-https://commons.wikimedia.org/wiki/File:Checkmark_green.svg
+Most images under a Creative Commons license.
 
+* Comics - [xkcd.com](https://xkcd.com/)
+* Broken Lock - [Iron Bishop via wikimedia commons](https://commons.wikimedia.org/wiki/File:Image-Wikimania--5_agosto--Broken_lock.png)
+* Ruby Logo - [Yukihiro Matsumoto via wikimedia commons](https://commons.wikimedia.org/wiki/File:Ruby_logo.png)
+* Red X - [Yerson_O via wikimedia commons](https://commons.wikimedia.org/wiki/File%3AX.png)
+* Green Checkmark - Public domain! Woo!!!
 
 Any Questions?
 ==============
-Email:
-GPG Key:
 
-CCs license
+---
+
+Email: [Matt Glover <matt.glover@mandiant.com>](mailto:matt.glover@mandiant.com)
+
+GPG Key: [2048R/54C013B4](http://pgp.mit.edu:11371/pks/lookup?op=vindex&search=0x093E4CC354C013B4)
+
+---
+
+<div style="text-align: center;vertical-align: middle;">
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The State of Security in Ruby</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Matt Glover</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+</div>
