@@ -210,11 +210,11 @@ Easy! Just Write Good Code!
 
 Calibrating Risk
 ================
-<img src="images/the_general_problem.png" style="display: block;margin-left: auto;margin-right: auto;height: 45%;" title="XKCD: Over-engineering - The general problem" alt="XKCD: Over-engineering The general problem" />
+<img src="images/the_general_problem.png" style="display: block;margin-left: auto;margin-right: auto;width: 55%;" title="XKCD: Over-engineering - The general problem" alt="XKCD: Over-engineering The general problem" />
 
 ### <center>VS.</center>
 
-<img src="images/goto.png" style="display: block;margin-left: auto;margin-right: auto;height: 45%;width: 75%" title="XKCD: Under-engineering - GOTO" alt="XKCD: Under-engineering - GOTO" />
+<img src="images/goto.png" style="display: block;margin-left: auto;margin-right: auto;width: 75%;" title="XKCD: Under-engineering - GOTO" alt="XKCD: Under-engineering - GOTO" />
 
 Risk Management
 ===============
@@ -287,7 +287,7 @@ Practices:
     * Know your likely attack cases
 <% end %>
 <% right do %>
-<img src="images/clippy_secure.jpg" style="display: block;margin-left: auto;margin-right: auto;height: 45%;" title="It looks like you're trying to secure your software" alt="It looks like you're trying to secure your software" />
+<img src="images/clippy_secure.jpg" style="display: block;margin-left: auto;margin-right: auto;" title="It looks like you're trying to secure your software" alt="It looks like you're trying to secure your software" />
 <% end %>
 
 Defense - Continued
