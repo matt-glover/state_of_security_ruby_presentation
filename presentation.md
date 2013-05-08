@@ -285,6 +285,7 @@ Practices:
     * [*I'm with you Flip!*](http://www.meetup.com/dcruby/events/68564112/)
     * Possible security trade-off here
     * Know your likely attack cases
+* Controls on third party libraries
 <% end %>
 <% right do %>
 <img src="images/clippy_secure.jpg" style="display: block;margin-left: auto;margin-right: auto;" title="It looks like you're trying to secure your software" alt="It looks like you're trying to secure your software" />
@@ -320,6 +321,8 @@ Treat a security response like a disaster recovery response:
 * Keep backups
     * **Test your restore process**
 * Encrypt sensitive data
+    * SHA-2 hashing of passwords (or bcrypt, scrypt, et. al. if you prefer)
+    * `OpenSSL.fips_mode = true` for Federal clients!
 * Load balancing
 * Ship audits/logs to another machine
     * Logs tell you who, what, when, where, and how
