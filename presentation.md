@@ -363,6 +363,8 @@ Email: [Matt Glover <matt.glover@mandiant.com>](mailto:matt.glover@mandiant.com)
 
 GPG Key: [2048R/54C013B4](http://pgp.mit.edu:11371/pks/lookup?op=vindex&search=0x093E4CC354C013B4)
 
+Presentation: [https://github.com/matt-glover/state_of_security_ruby_presentation](https://github.com/matt-glover/state_of_security_ruby_presentation)
+
 ---
 
 <div style="text-align: center;vertical-align: middle;">
