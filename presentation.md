@@ -138,12 +138,48 @@ Where are we at now?
 
 How Does Ruby Stack Up?
 =======================
-Ruby v. Java
-Ruby v. Other OSS (Apache, postgres, etc.)
-Ruby v. Closed software
+Ruby v. Java - Java is a mature enterprise-grade solution! That **MUST** be more secure!!!
+<% step do %>
+<img src="images/x.png" alt="x" /> [US government advises computer users to disable Java software](https://www.us-cert.gov/ncas/alerts/TA13-010A)
 
-What Can You Do?
-================
+<img src="images/x.png" alt="x" /> [Oracle’s Java SE Critical Patch Update for April 2013](http://www.oracle.com/technetwork/topics/security/javacpuapr2013-1928497.html) contains 19 CVEs with CVSS base score of 10 (the highest you can go)
+<% end %>
+
+<% step do %>
+---
+Ruby v. Other OSS (Apache, Postgres, etc.)
+<% end %>
+<% step do %>
+* [Apache had 70+ CVEs over the past year](https://web.nvd.nist.gov/view/vuln/search-results?adv_search=true&cves=on&cve_id=&query=Apache&cwe_id=&pub_date_start_month=4&pub_date_start_year=2012&pub_date_end_month=-1&pub_date_end_year=-1&mod_date_start_month=-1&mod_date_start_year=-1&mod_date_end_month=-1&mod_date_end_year=-1&cvss_sev_base=&cvss_av=&cvss_ac=&cvss_au=&cvss_c=&cvss_i=&cvss_a=)
+* [Postgres recently issued a major security patch](http://www.postgresql.org/about/news/1397/)
+<% end %>
+
+What Is The Lesson Here?
+========================
+<% left do %>
+  <% step do %>* Ruby has terrible security!<% end %>
+<% end %>
+<% right do %>
+  <% step do %><img src="images/x.png" alt="x" /><% end %>
+<% end %>
+<% left do %>
+  <% step do %>* Everything has terrible security!!<% end %>
+<% end %>
+<% right do %>
+  <% step do %><img src="images/x.png" alt="x" /><% end %>
+<% end %>
+<% left do %>
+  <% step do %>* Security is hard!!!<% end %>
+<% end %>
+<% right do %>
+  <% step do %><img src="images/x.png" alt="x" /><% end %>
+<% end %>
+<% left do %>
+  <% step do %>* Writing software is hard.<% end %>
+<% end %>
+<% right do %>
+  <% step do %><img src="images/checkmark.png" alt="check" /><% end %>
+<% end %>
 
 Accepting Reality
 =================
