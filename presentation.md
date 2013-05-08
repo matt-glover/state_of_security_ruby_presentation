@@ -4,6 +4,10 @@ subfooter:
 title: The State of Security in Ruby
 author: Matt Glover
 
+<% content_for :css do %>
+.step { visibility: hidden; }
+<% end %>
+
 The State of Security in Ruby
 =============================
 
@@ -62,6 +66,9 @@ Ruby Example
 
 TL;DR - Replaces hashing algorithm to avoid predictable collisions leading to worst-case insert times.
 
+<img src="images/ruby_logo.png" title="Ruby logo" alt="Ruby logo" style="display: block;margin-left: auto;margin-right: auto;width: 15%;" />
+
+
 Rails Example
 =============
 [3.2.11 Abitrary Code Execution via XML](http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/)
@@ -93,19 +100,41 @@ A *non*-exhaustive list of other Ruby gem CVEs over the past year:
 
 Security Vulnerability Impacts
 ==============================
-Personal Rails Example (Scumbag Rails logo)
-Tight Coupling (Plethora of stuff pulled in via Rails including ORM, mailer, web request stack)
-Github Email Example
+Upgrading Rails:
+
+<% step do %><img src="images/x.png" alt="x" /> [3.2.8 => 3.2.9]: Backwards incompatible changes. Wait for the revert.<% end%>
+
+<% step do %><img src="images/x.png" alt="x" /> [3.2.8 => 3.2.10]: Still waiting on the 3.2.9 reverts and easy to patch.<% end %>
+
+<% step do %><img src="images/x.png" alt="x" /> [3.2.8 => 3.2.11]: Still waiting on the 3.2.9 reverts and easy to patch.<% end %>
+
+<% step do %><img src="images/x.png" alt="x" /> [3.2.8 => 3.2.12]: Okay this is getting out of hand. Are the reverts even coming?<% end %>
+
+<% step do %><img src="images/checkmark.png" alt="check" /> [3.2.8 => 3.2.13]: Reverts! More incompatible changes!? Work around issues?<% end %>
+
+Why Rails Patches Are Painful
+================================
+
+Tight coupling between multiple components makes patching difficult.
+
+Rails includes an ORM, a mailer, a full web request stack, parameter handlers, etc.
+
+Github's recent email problem demonstrated these pains
+
+[Rails has improved their patch policy](http://weblog.rubyonrails.org/2013/2/24/maintenance-policy-for-ruby-on-rails/)
 
 Why are we seeing this?
 =======================
- - Popularity of Ruby
- - Popularity of major libraries like Rails
- - Increases/improvements in the software security research community
- - Things long known to be broken or questionable finally coming to relevance
+<% step do %>* Popularity of Ruby<% end %>
+<% step do %>* Popularity of major libraries like Rails<% end %>
+<% step do %>* Increases/improvements in the software security research community<% end %>
+<% step do %>* Things long known to be broken or questionable finally coming to relevance<% end %>
 
+<% step do %>
 Where are we at now?
- - A lot of low hanging fruit left?
+
+* A lot of low hanging fruit left?
+<% end %>
 
 How Does Ruby Stack Up?
 =======================
@@ -208,6 +237,9 @@ XKCD, Rails, etc.
 
 https://commons.wikimedia.org/wiki/File:Image-Wikimania--5_agosto--Broken_lock.png
 https://commons.wikimedia.org/wiki/File:Ruby_logo.png
+https://commons.wikimedia.org/wiki/File%3AX.png
+https://commons.wikimedia.org/wiki/File:Checkmark_green.svg
+
 
 Any Questions?
 ==============
